@@ -218,18 +218,38 @@ public class Interfaz extends javax.swing.JFrame {
         jButton18.setFont(new java.awt.Font("Tahoma", 0, 19)); // NOI18N
         jButton18.setText("1/x");
         jButton18.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton18ActionPerformed(evt);
+            }
+        });
 
         jButton19.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton19.setText("%");
         jButton19.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton19ActionPerformed(evt);
+            }
+        });
 
         jButton21.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton21.setText("±");
         jButton21.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton21ActionPerformed(evt);
+            }
+        });
 
         jButton22.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton22.setText("√");
         jButton22.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton22ActionPerformed(evt);
+            }
+        });
 
         txtprincipal.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txtprincipal.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
@@ -593,6 +613,50 @@ public class Interfaz extends javax.swing.JFrame {
             txtprincipal.setText(cadena1 + " " + operacion + " " + cadena2);
         }
     }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
+        // TODO add your handling code here:
+        operacion = txtprincipal.getText();
+        if (operacion.length() > 0) {
+            resultado = Math.sqrt(Double.parseDouble(operacion));
+            txtprincipal.setText(String.valueOf(resultado));
+
+        }
+
+    }//GEN-LAST:event_jButton22ActionPerformed
+
+    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+        // TODO add your handling code here:
+        operacion = txtprincipal.getText();
+        if (operacion.length() > 0) {
+            double mul = (Double.parseDouble(txtprincipal.getText().substring(0, txtprincipal.getText().indexOf("*"))));
+            double mul1 = (Double.parseDouble(txtprincipal.getText().substring(txtprincipal.getText().indexOf("*") + 2)));
+            resultado = (mul * mul1) / 100;
+            txtprincipal.setText(String.valueOf(resultado));
+
+        }
+
+    }//GEN-LAST:event_jButton19ActionPerformed
+
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+        // TODO add your handling code here:
+        operacion = txtprincipal.getText();
+        if (operacion.length() > 0) {
+            resultado = 1 / Double.parseDouble(operacion);
+            txtprincipal.setText(String.valueOf(resultado));
+        }
+
+    }//GEN-LAST:event_jButton18ActionPerformed
+
+    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
+        // TODO add your handling code here:
+        operacion=txtprincipal.getText();
+        if(operacion.length()>0){
+            resultado= (-1)* Double.parseDouble(operacion);
+            txtprincipal.setText(String.valueOf(resultado));
+        }
+        
+    }//GEN-LAST:event_jButton21ActionPerformed
 
     /**
      * @param args the command line arguments
