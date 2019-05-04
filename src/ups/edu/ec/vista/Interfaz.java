@@ -14,6 +14,13 @@ public class Interfaz extends javax.swing.JFrame {
     /**
      * Creates new form Interfaz
      */
+    private String cadena1 = "";
+    private String cadena2 = "";
+    private String operacion = "";
+    private int turno = 1;
+    private String signo;
+    double resultado;
+
     public Interfaz() {
         initComponents();
     }
@@ -50,7 +57,7 @@ public class Interfaz extends javax.swing.JFrame {
         jButton19 = new javax.swing.JButton();
         jButton21 = new javax.swing.JButton();
         jButton22 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        txtprincipal = new javax.swing.JTextField();
         jButton20 = new javax.swing.JButton();
         jButton23 = new javax.swing.JButton();
 
@@ -67,6 +74,11 @@ public class Interfaz extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton1.setText("7");
         jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton2.setText("8");
@@ -80,14 +92,29 @@ public class Interfaz extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton3.setText("9");
         jButton3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton4.setText("4");
         jButton4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton5.setText("5");
         jButton5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton7.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton7.setText("6");
@@ -101,42 +128,92 @@ public class Interfaz extends javax.swing.JFrame {
         jButton8.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton8.setText("1");
         jButton8.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         jButton9.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton9.setText("2");
         jButton9.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
 
         jButton10.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton10.setText("3");
         jButton10.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
 
         jButton11.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton11.setText("0");
         jButton11.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
 
         jButton12.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton12.setText(".");
         jButton12.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
 
         jButton13.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton13.setText("+");
         jButton13.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
 
         jButton14.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton14.setText("-");
         jButton14.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
 
         jButton15.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton15.setText("*");
         jButton15.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
 
         jButton16.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton16.setText("/");
         jButton16.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
 
         jButton17.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton17.setText("=");
         jButton17.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
 
         jButton18.setFont(new java.awt.Font("Tahoma", 0, 19)); // NOI18N
         jButton18.setText("1/x");
@@ -154,18 +231,28 @@ public class Interfaz extends javax.swing.JFrame {
         jButton22.setText("√");
         jButton22.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        jTextField1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        jTextField1.setEnabled(false);
+        txtprincipal.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtprincipal.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txtprincipal.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        txtprincipal.setEnabled(false);
 
         jButton20.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton20.setText("C");
         jButton20.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton20ActionPerformed(evt);
+            }
+        });
 
         jButton23.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton23.setText("CE");
         jButton23.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton23ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -222,7 +309,7 @@ public class Interfaz extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtprincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
@@ -234,7 +321,7 @@ public class Interfaz extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtprincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
@@ -308,11 +395,204 @@ public class Interfaz extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        if (turno == 1) {
+            cadena1 += "8";
+            txtprincipal.setText(cadena1);
+        } else {
+            cadena2 += "8";
+            txtprincipal.setText(cadena1 + " " + operacion + " " + cadena2);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
+        if (turno == 1) {
+            cadena1 += "6";
+            txtprincipal.setText(cadena1);
+        } else {
+            cadena2 += "6";
+            txtprincipal.setText(cadena1 + " " + operacion + " " + cadena2);
+        }
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+        // TODO add your handling code here:
+        txtprincipal.setText(" ");
+        cadena1 = "";
+        cadena2 = "";
+        operacion = "";
+        resultado = 0;
+
+    }//GEN-LAST:event_jButton20ActionPerformed
+
+    private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
+        // TODO add your handling code here:
+        txtprincipal.setText(" ");
+        cadena1 = "";
+        cadena2 = "";
+        operacion = "";
+        resultado = 0;
+    }//GEN-LAST:event_jButton23ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+        turno = 2;
+        operacion = "+";
+        txtprincipal.setText(cadena1 + " " + operacion + " " + cadena2);
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        // TODO add your handling code here:
+        turno = 2;
+        operacion = "-";
+        txtprincipal.setText(cadena1 + " " + operacion + " " + cadena2);
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        // TODO add your handling code here:
+        turno = 2;
+        operacion = "*";
+        txtprincipal.setText(cadena1 + " " + operacion + " " + cadena2);
+    }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        // TODO add your handling code here:
+        turno = 2;
+        operacion = "/";
+        txtprincipal.setText(cadena1 + " " + operacion + " " + cadena2);
+    }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+        // TODO add your handling code here:
+        double c1;
+        double c2;
+        double resul = 0;
+        c1 = Double.parseDouble(cadena1);
+        c2 = Double.parseDouble(cadena2);
+
+        switch (operacion) {
+            case "+":
+                resul = c1 + c2;
+                break;
+            case "-":
+                resul = c1 - c2;
+                break;
+            case "*":
+                resul = c1 * c2;
+                break;
+            case "/":
+                resul = c1 / c2;
+                break;
+            case "%":
+                resul = (c1 * c2) / 100;
+                break;
+        }
+        txtprincipal.setText(cadena1 + " " + operacion + " " + cadena2 + " = " + resul);
+        turno = 1;
+        cadena1 = "0";
+        cadena1 = "0";
+        operacion = "0";
+
+    }//GEN-LAST:event_jButton17ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        // TODO add your handling code here:
+        if (turno == 1) {
+            cadena1 += ".";
+            txtprincipal.setText(cadena1);
+        } else {
+            cadena2 += ".";
+            txtprincipal.setText(cadena1 + " " + operacion + " " + cadena2);
+        }
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+        if (turno == 1) {
+            cadena1 += "1";
+            txtprincipal.setText(cadena1);
+        } else {
+            cadena2 += "1";
+            txtprincipal.setText(cadena1 + " " + operacion + " " + cadena2);
+        }
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+        if (turno == 1) {
+            cadena1 += "2";
+            txtprincipal.setText(cadena1);
+        } else {
+            cadena2 += "2";
+            txtprincipal.setText(cadena1 + " " + operacion + " " + cadena2);
+        }
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+        if (turno == 1) {
+            cadena1 += "3";
+            txtprincipal.setText(cadena1);
+        } else {
+            cadena2 += "3";
+            txtprincipal.setText(cadena1 + " " + operacion + " " + cadena2);
+        }
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        if (turno == 1) {
+            cadena1 += "4";
+            txtprincipal.setText(cadena1);
+        } else {
+            cadena2 += "4";
+            txtprincipal.setText(cadena1 + " " + operacion + " " + cadena2);
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        if (turno == 1) {
+            cadena1 += "5";
+            txtprincipal.setText(cadena1);
+        } else {
+            cadena2 += "5";
+            txtprincipal.setText(cadena1 + " " + operacion + " " + cadena2);
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        if (turno == 1) {
+            cadena1 += "7";
+            txtprincipal.setText(cadena1);
+        } else {
+            cadena2 += "7";
+            txtprincipal.setText(cadena1 + " " + operacion + " " + cadena2);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        if (turno == 1) {
+            cadena1 += "9";
+            txtprincipal.setText(cadena1);
+        } else {
+            cadena2 += "9";
+            txtprincipal.setText(cadena1 + " " + operacion + " " + cadena2);
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+        if (turno == 1) {
+            cadena1 += "0";
+            txtprincipal.setText(cadena1);
+        } else {
+            cadena2 += "0";
+            txtprincipal.setText(cadena1 + " " + operacion + " " + cadena2);
+        }
+    }//GEN-LAST:event_jButton11ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -375,6 +655,6 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JButton jButton9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField txtprincipal;
     // End of variables declaration//GEN-END:variables
 }
