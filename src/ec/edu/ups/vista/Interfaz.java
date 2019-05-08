@@ -256,6 +256,11 @@ public class Interfaz extends javax.swing.JFrame {
         txtprincipal.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txtprincipal.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         txtprincipal.setEnabled(false);
+        txtprincipal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtprincipalActionPerformed(evt);
+            }
+        });
 
         jButton20.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         jButton20.setText("C");
@@ -659,6 +664,10 @@ public class Interfaz extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jButton21ActionPerformed
+
+    private void txtprincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtprincipalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtprincipalActionPerformed
 
     /**
      * @param args the command line arguments
