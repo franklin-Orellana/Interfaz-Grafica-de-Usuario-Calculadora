@@ -1,5 +1,4 @@
 # InterfazGraficaUsuario-Calculadora
-# InterfazGraficaUsuario-TresenRaya
 
 **Nombre: Franklin Orellana**
 
