@@ -20,11 +20,9 @@
     - InterfazGraficaUsuario-Calculadora
     
     
-**2. Realizar varios commit y push por cada requerimiento de los puntos descritos anteriormente (incluir un mensaje que identifique claramente los commits realizados a 
+**2. Realizar varios commit y push por cada requerimiento de los puntos descritos anteriormente (incluir un mensaje que identifique claramente los commits realizados a GitHub).**
 
-GitHub).**
-
-    ![cal](https://user-images.githubusercontent.com/49034691/57350871-5973ca00-7125-11e9-9ea5-8b4186e66449.png)
+![cal](https://user-images.githubusercontent.com/49034691/57350871-5973ca00-7125-11e9-9ea5-8b4186e66449.png)
      
      
 **3. Construir las aplicaciones en Java.**
